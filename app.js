@@ -10,7 +10,8 @@ const CONFIG = {
     TIMEZONE: 'Asia/Taipei',
     STORAGE_KEY: 'classScoreboard.v1',
     THROTTLE_DELAY: 50,
-    TRANSITION_DURATION: 150
+    TRANSITION_DURATION: 150,
+    GRID_HEIGHT: 30 // 每格高度（像素）
 };
 
 // 狀態管理
@@ -189,7 +190,7 @@ class ScoreboardRenderer {
             
             const characterContainer = document.querySelector(`[data-lane="${lane}"] .character-container`);
             if (characterContainer) {
-                const bottomPosition = level * 40; // 每格40px
+                const bottomPosition = level * CONFIG.GRID_HEIGHT; // 使用配置的每格高度
                 characterContainer.style.bottom = `${bottomPosition}px`;
             }
         });

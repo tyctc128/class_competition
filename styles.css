@@ -12,7 +12,7 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
     --transition-duration: 150ms;
     --border-radius: 8px;
-    --spacing: 24px;
+    --spacing: 16px;
 }
 
 /* 基本樣式重置 */
@@ -43,33 +43,33 @@ body {
 header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 1rem var(--spacing);
+    padding: 0.75rem var(--spacing);
     text-align: center;
     box-shadow: 0 2px 10px var(--shadow-color);
 }
 
 header h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .controls {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
 }
 
 .reset-btn, .lock-btn, .help-btn {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border: none;
     border-radius: var(--border-radius);
     background: rgba(255, 255, 255, 0.2);
     color: white;
     cursor: pointer;
     transition: all var(--transition-duration);
-    font-size: 1rem;
+    font-size: 0.9rem;
     backdrop-filter: blur(10px);
 }
 
@@ -79,16 +79,16 @@ header h1 {
 }
 
 .lock-btn {
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    min-width: 44px;
-    min-height: 44px;
+    font-size: 1rem;
+    padding: 0.4rem;
+    min-width: 40px;
+    min-height: 40px;
 }
 
 /* 主要計分板區域 */
 .scoreboard {
     padding: var(--spacing);
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -110,12 +110,12 @@ header h1 {
 .vine-track {
     position: relative;
     width: 100%;
-    height: calc(var(--levels) * 40px + 120px);
+    height: calc(var(--levels) * 30px + 100px);
     background: 
         linear-gradient(to bottom, 
             transparent 0%, 
-            transparent calc(100% - 120px),
-            var(--ground-color) calc(100% - 120px),
+            transparent calc(100% - 100px),
+            var(--ground-color) calc(100% - 100px),
             var(--ground-color) 100%
         );
     border-radius: var(--border-radius);
@@ -129,10 +129,10 @@ header h1 {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 8px;
+    width: 6px;
     height: 100%;
     background: var(--vine-color);
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 /* 藤蔓葉子 */
@@ -144,24 +144,24 @@ header h1 {
     right: 0;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 30% 20%, var(--vine-leaf-color) 0%, transparent 8px),
-        radial-gradient(circle at 70% 40%, var(--vine-leaf-color) 0%, transparent 10px),
-        radial-gradient(circle at 20% 60%, var(--vine-leaf-color) 0%, transparent 12px),
-        radial-gradient(circle at 80% 80%, var(--vine-leaf-color) 0%, transparent 9px);
-    background-size: 100px 100px;
+        radial-gradient(circle at 30% 20%, var(--vine-leaf-color) 0%, transparent 6px),
+        radial-gradient(circle at 70% 40%, var(--vine-leaf-color) 0%, transparent 8px),
+        radial-gradient(circle at 20% 60%, var(--vine-leaf-color) 0%, transparent 10px),
+        radial-gradient(circle at 80% 80%, var(--vine-leaf-color) 0%, transparent 7px);
+    background-size: 80px 80px;
     opacity: 0.6;
 }
 
 /* 分數顯示 */
 .score-display {
     position: absolute;
-    top: 10px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.9);
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: var(--border-radius);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: var(--text-color);
     box-shadow: 0 2px 8px var(--shadow-color);
@@ -174,8 +174,8 @@ header h1 {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     transition: bottom var(--transition-duration) ease-out;
 }
 
@@ -234,14 +234,14 @@ header h1 {
 /* 控制按鈕區域 */
 .controls-row {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
     justify-content: center;
 }
 
 .arrow-btn {
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
     border: none;
     border-radius: 50%;
     background: var(--lane-color, #666);
@@ -251,7 +251,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     box-shadow: 0 2px 8px var(--shadow-color);
 }
 
@@ -280,7 +280,7 @@ header h1 {
 
 /* 箭頭樣式 */
 .arrow {
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1;
 }
 
@@ -379,11 +379,11 @@ header h1 {
 @media (max-width: 1200px) {
     .lanes-container {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        gap: 0.75rem;
     }
     
     .scoreboard {
-        padding: 1rem;
+        padding: 0.75rem;
     }
 }
 
@@ -394,26 +394,26 @@ header h1 {
     }
     
     .vine-track {
-        height: calc(var(--levels) * 30px + 100px);
+        height: calc(var(--levels) * 25px + 80px);
     }
     
     .character {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
     
     .character-container {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
     
     .score-display {
-        font-size: 1.2rem;
-        padding: 0.3rem 0.8rem;
+        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
     }
     
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .controls {
@@ -421,15 +421,25 @@ header h1 {
     }
     
     .reset-btn, .help-btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .arrow-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+    }
+    
+    .arrow {
+        font-size: 1.7rem;
     }
 }
 
 @media (max-width: 480px) {
     .lanes-container {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 0.75rem;
     }
     
     .controls-row {
@@ -437,9 +447,13 @@ header h1 {
     }
     
     .arrow-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+    
+    .arrow {
+        font-size: 1.5rem;
     }
     
     .modal-content {
@@ -451,8 +465,8 @@ header h1 {
 /* 觸控優化 */
 @media (hover: none) and (pointer: coarse) {
     .arrow-btn {
-        min-width: 44px;
-        min-height: 44px;
+        min-width: 56px;
+        min-height: 56px;
     }
     
     .character:hover {
